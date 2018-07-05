@@ -1,0 +1,51 @@
+html, body {
+    background-color: #fff;
+    color: #454545;
+}
+h2 {
+    background-color: #555;
+    color: #ccc;
+    font-weight: bold;
+    padding: 1em;
+}
+
+h3 {
+    font-weight: bold;
+}
+
+h3::before{
+    content: '■';
+}
+
+.small {
+    text-align: right;
+}
+
+code {
+    color: #666600;
+}
+
+code::before {
+    content: " '";
+}
+
+code::after {
+    content: "' ";
+}
+
+pre > code {
+    background-color: #333;
+    color: #333;
+}
+
+pre > code::before {
+    content: "";
+}
+
+pre > code::after {
+    content: "";
+}
+
+pre > code > div {
+    background-color: #ddd;
+}
