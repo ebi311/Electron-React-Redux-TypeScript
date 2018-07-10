@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/katex.min.css" integrity="sha384-BTL0nVi8DnMrNdMQZG1Ww6yasK9ZGnUxL1ZWukXQ7fygA1py52yPp9W4wrR00VML" crossorigin="anonymous">
+        <style>
+/*--------------------------------------------------------------------------------------------- * Copyright (c) Microsoft Corporation. All rights reserved. * Licensed under the MIT License. See License.txt in the project root for license information. *--------------------------------------------------------------------------------------------*/ body { font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback"; font-size: 14px; padding: 0 26px; line-height: 22px; word-wrap: break-word; } #code-csp-warning { position: fixed; top: 0; right: 0; color: white; margin: 16px; text-align: center; font-size: 12px; font-family: sans-serif; background-color:#444444; cursor: pointer; padding: 6px; box-shadow: 1px 1px 1px rgba(0,0,0,.25); } #code-csp-warning:hover { text-decoration: none; background-color:#007acc; box-shadow: 2px 2px 2px rgba(0,0,0,.25); } body.scrollBeyondLastLine { margin-bottom: calc(100vh - 22px); } body.showEditorSelection .code-line { position: relative; } body.showEditorSelection .code-active-line:before, body.showEditorSelection .code-line:hover:before { content: ""; display: block; position: absolute; top: 0; left: -12px; height: 100%; } body.showEditorSelection li.code-active-line:before, body.showEditorSelection li.code-line:hover:before { left: -30px; } .vscode-light.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(0, 0, 0, 0.15); } .vscode-light.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(0, 0, 0, 0.40); } .vscode-light.showEditorSelection .code-line .code-line:hover:before { border-left: none; } .vscode-dark.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 255, 255, 0.4); } .vscode-dark.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 255, 255, 0.60); } .vscode-dark.showEditorSelection .code-line .code-line:hover:before { border-left: none; } .vscode-high-contrast.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 160, 0, 0.7); } .vscode-high-contrast.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 160, 0, 1); } .vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before { border-left: none; } img { max-width: 100%; max-height: 100%; } a { text-decoration: none; } a:hover { text-decoration: underline; } a:focus, input:focus, select:focus, textarea:focus { outline: 1px solid -webkit-focus-ring-color; outline-offset: -1px; } hr { border: 0; height: 2px; border-bottom: 2px solid; } h1 { padding-bottom: 0.3em; line-height: 1.2; border-bottom-width: 1px; border-bottom-style: solid; } h1, h2, h3 { font-weight: normal; } h1 code, h2 code, h3 code, h4 code, h5 code, h6 code { font-size: inherit; line-height: auto; } table { border-collapse: collapse; } table > thead > tr > th { text-align: left; border-bottom: 1px solid; } table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table > tbody > tr > td { padding: 5px 10px; } table > tbody > tr + tr > td { border-top: 1px solid; } blockquote { margin: 0 7px 0 5px; padding: 0 16px 0 10px; border-left-width: 5px; border-left-style: solid; } code { font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback"; font-size: 14px; line-height: 19px; } body.wordWrap pre { white-space: pre-wrap; } .mac code { font-size: 12px; line-height: 18px; } pre:not(.hljs), pre.hljs code > div { padding: 16px; border-radius: 3px; overflow: auto; } /** Theming */ pre code { color: var(--vscode-editor-foreground); } .vscode-light pre:not(.hljs), .vscode-light code > div { background-color: rgba(220, 220, 220, 0.4); } .vscode-dark pre:not(.hljs), .vscode-dark code > div { background-color: rgba(10, 10, 10, 0.4); } .vscode-high-contrast pre:not(.hljs), .vscode-high-contrast code > div { background-color: rgb(0, 0, 0); } .vscode-high-contrast h1 { border-color: rgb(0, 0, 0); } .vscode-light table > thead > tr > th { border-color: rgba(0, 0, 0, 0.69); } .vscode-dark table > thead > tr > th { border-color: rgba(255, 255, 255, 0.69); } .vscode-light h1, .vscode-light hr, .vscode-light table > tbody > tr + tr > td { border-color: rgba(0, 0, 0, 0.18); } .vscode-dark h1, .vscode-dark hr, .vscode-dark table > tbody > tr + tr > td { border-color: rgba(255, 255, 255, 0.18); } 
+</style>
+<style>
+/* Tomorrow Theme */ /* http://jmblog.github.com/color-themes-for-google-code-highlightjs */ /* Original theme - https://github.com/chriskempson/tomorrow-theme */ /* Tomorrow Comment */ .hljs-comment, .hljs-quote { color: #8e908c; } /* Tomorrow Red */ .hljs-variable, .hljs-template-variable, .hljs-tag, .hljs-name, .hljs-selector-id, .hljs-selector-class, .hljs-regexp, .hljs-deletion { color: #c82829; } /* Tomorrow Orange */ .hljs-number, .hljs-built_in, .hljs-builtin-name, .hljs-literal, .hljs-type, .hljs-params, .hljs-meta, .hljs-link { color: #f5871f; } /* Tomorrow Yellow */ .hljs-attribute { color: #eab700; } /* Tomorrow Green */ .hljs-string, .hljs-symbol, .hljs-bullet, .hljs-addition { color: #718c00; } /* Tomorrow Blue */ .hljs-title, .hljs-section { color: #4271ae; } /* Tomorrow Purple */ .hljs-keyword, .hljs-selector-tag { color: #8959a8; } .hljs { display: block; overflow-x: auto; color: #4d4d4c; padding: 0.5em; } .hljs-emphasis { font-style: italic; } .hljs-strong { font-weight: bold; }
+</style>
+<style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+<style>
+html, body { background-color: #fff; color: #454545; } h2 { background-color: #555; color: #ccc; font-weight: bold; padding: 1em; } h3 { font-weight: bold; } h3::before{ content: '■'; } .small { text-align: right; } code { color: #666600; } code::before { content: " '"; } code::after { content: "' "; } pre > code { color: #ccc; } pre > code::before { content: ""; } pre > code::after { content: ""; } pre > code > div { background-color: #333; }
+</style>
+        <style>
+            body {
+                font-family: Meiryo UI;
+                font-size: 12px;
+                line-height: 1.6;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="electron--react--redux--typescript-アプリ作成ワークショップ-3日目">Electron &amp; React &amp; Redux &amp; TypeScript アプリ作成ワークショップ 3日目</h1>
+<p>前回までに、 webpack を使ったビルドができるようになりました。</p>
+<p>今回は、 React-Redux を使ったSkeletonコード的なものを書いていきます。React の基本的な書き方と Redux のデータフローを実感するために、簡単な下記のような画面を作成します。</p>
+<p>その前に Redux について触れておきます。</p>
+<h2 id="redux-のデータフロー">Redux のデータフロー</h2>
+<blockquote>
+<p>参考: <a href="https://qiita.com/kiita312/items/49a1f03445b19cf407b7">Redux入門【ダイジェスト版】10分で理解するReduxの基礎</a></p>
+</blockquote>
+<p>Redux はデータとその流れを制御するフレームワークです。</p>
+<p>Redux には、いくつかのモジュールに分かれていて、それをカスタマイズしていくことになります。</p>
+<ul>
+<li>
+<p>view</p>
+<p>UIをレンダリングするモジュールで、Redux には含まれません。</p>
+<p>Reactで記述して、Redux での Store の変更を React-Redux で受け取ります。</p>
+</li>
+<li>
+<p>action</p>
+<p>view で操作等のイベントで、 stroe のデータを更新する必要がある場合、その更新に必要なデータを格納したオブジェクトです。</p>
+</li>
+<li>
+<p>reducer</p>
+<p>view から dispach コマンドによって、アクションを送られ、その内容に応じてデータの更新を行うモジュールです。</p>
+</li>
+<li>
+<p>store</p>
+<p>データ(state)を保持するモジュール。シングルトン・オブジェクトとなる。</p>
+</li>
+<li>
+<p>state</p>
+<p>データそのもの。</p>
+</li>
+</ul>
+<h2 id="state-の作成">state の作成</h2>
+<p><code>ts/states</code>ディレクトリを作成し、<code>IUser.ts</code>ファイルを作成して、保持するデータの構造体をインターフェースとして定義します。</p>
+<p>今回は非常に簡単なモデルにします。</p>
+<p>ts/states/IUser.ts</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> IUser {
+    name: <span class="hljs-built_in">string</span>;
+}
+</div></code></pre>
+<h2 id="component-の作成">component の作成</h2>
+<p>画面に表示するための部品となる、コンポーネントを作成します。</p>
+<p>できれば、コピペではなくタイプして入力してください。入力支援の効果が体験できます。</p>
+<h3 id="ラベル付きテキストボックスの作成">ラベル付きテキストボックスの作成</h3>
+<p>まずは、汎用的なラベル付きのテキストボックスのコンポーネントを作成します。
+<code>ts/components</code>ディレクトリを作成し、<code>TextBox.tsx</code>ファイルを作成します。</p>
+<p>ts/components/TextBox.tsx</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>; <span class="hljs-comment">// --(a);</span>
+
+<span class="hljs-comment">// 親コンポーネントから渡されるプロパティを定義する // --(b)</span>
+interface IProps {
+    <span class="hljs-comment">// ラベル文字列</span>
+    label: string;
+    <span class="hljs-comment">// テキストボックスのタイプ</span>
+    type: <span class="hljs-string">'text'</span> | <span class="hljs-string">`password`</span>;
+    <span class="hljs-comment">// テキストボックスに表示する値</span>
+    value: string;
+    <span class="hljs-comment">// 値の確定時にその値を親プロパティが取得するためにコールバック関数を提供する</span>
+    onChnageText: <span class="hljs-function">(<span class="hljs-params">value: string</span>) =&gt;</span> <span class="hljs-keyword">void</span>;
+}
+
+<span class="hljs-comment">/**
+ * ラベル付きのテキストボックスを提供する
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TextBox</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span>&lt;<span class="hljs-title">IProps</span>, </span>{}&gt; { <span class="hljs-comment">// --(c)</span>
+    <span class="hljs-comment">// DOMエレメントをレンダリングする</span>
+    public render() {
+        <span class="hljs-comment">// ラベルが設定されていない場合は、 label を出力しない</span>
+        <span class="hljs-keyword">const</span> label = (!!<span class="hljs-keyword">this</span>.props.label) ?
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>{this.props.label}<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span></span> :
+            <span class="hljs-literal">null</span>; <span class="hljs-comment">// --(d)</span>
+        <span class="hljs-keyword">return</span> (
+            &lt;span&gt;
+                {/* {} で囲むと JavaScript のコードが書ける */}
+                {label /* --(e) */}
+                &lt;input name="username" type={this.props.type} value={this.props.value}
+                    onChange={this.onChnageText} /&gt; {/* --(f) */}
+            &lt;/span&gt;
+        );
+    }
+    // 値を変更したら、store.dispatch で action を reducer に渡して、state を更新する。
+    // state が更新されたら component の prop が更新され、再レンダリングされ、テキストボックスの内容が変更される。
+    private onChnageText = (e: React.ChangeEvent&lt;HTMLInputElement&gt;) =&gt; { // --(g)
+        this.props.onChnageText(e.target.value);
+    }
+
+}
+</div></code></pre>
+<p>コードの説明です。</p>
+<ul>
+<li>(a): react ライブラリの参照宣言</li>
+<li>(b): このコンポーネントの公開プロパティ。これを利用する親コンポーネントから渡される値の定義を宣言する。</li>
+<li>(c): クラスとしてコンポーネントを定義する。ジェネリック型引数の１番目は、プロパティの型、２番めはローカルステートの型となる。ローカルステートは、Redux を利用する場合あまり使用しない。</li>
+<li>(d): 動的なエレメントを変数に割当する。<code>label</code>オブジェクトは、<code>JSX.Element | null</code>という複合型になる。</li>
+<li>(e): (d)で変数にセットしたエレメントをここに展開する。<code>label</code>が<code>null</code>の場合は、何も出力されません。</li>
+<li>(f): HTML の input を定義している。属性は &quot;&quot; でくくるが、動的な値の場合は、{} でくくる。<br>
+ほとんどの HTML の属性が利用できるが、class など、JavaScript の予約語となっているものは利用できないので、className と属性名が変わるものもある。</li>
+<li>(g): input の value は、外部から渡された value プロパティを参照している。それは親のコンポーネントから渡されるものである。そのため、テキストボックスの入力値で、親のプロパティの値を更新しないと、値の変更がされず、値が入力できない。<br>
+Redux を利用する場合、reducer を通して stroe を更新し、その変更をコンポーネントで受ける事となる。</li>
+</ul>
+<h3 id="ユーザー名入力画面の作成">ユーザー名入力画面の作成</h3>
+<p><code>UserForm.tsx</code>ファイルを作成します。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { IUser } <span class="hljs-keyword">from</span> <span class="hljs-string">'../states/IUser'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserForm</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span>&lt;<span class="hljs-title">IUser</span>, </span>{}&gt; {
+    public render() {
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>ユーザー名:
+                    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">{this.props.name}</span> /&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        );
+    }
+}
+</span></div></code></pre>
+<p>コードの説明です。</p>
+<ul>
+<li>１行目：<code>react</code>をインポートして、<code>React.Component</code>の拡張クラスとする。</li>
+<li>３行目：ジェネリック型として、１番目にこのコンポーネントのプロパティの型を、２番目にローカルステートの型をそれぞれ指定する。</li>
+<li></li>
+</ul>
+
+    </body>
+    </html>

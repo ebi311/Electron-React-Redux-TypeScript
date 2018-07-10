@@ -34,8 +34,7 @@ code::after {
 }
 
 pre > code {
-    background-color: #333;
-    color: #333;
+    color: #ccc;
 }
 
 pre > code::before {
@@ -47,5 +46,5 @@ pre > code::after {
 }
 
 pre > code > div {
-    background-color: #ddd;
+    background-color: #333;
 }
