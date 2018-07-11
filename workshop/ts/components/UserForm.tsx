@@ -1,5 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { createChangeUserNameAction } from '../actions/UserEvents';
 import IUser from '../states/IUser';
+import store, { IState } from '../Store';
 import { TextBox } from './TextBox';
 
 /**
@@ -19,6 +22,11 @@ class UserForm extends React.Component<IUser, {}> { // --(a)
     }
 
     private onChangeText = (value: string) => { // --(c)
-        // action や store ができてから書く
+        store.dispatch(createChangeUserNameAction(value));
     }
 }
+
+const mapStateToProps = (state: IState): IUser => {
+    return state.User;
+};
+export default connect(mapStateToProps)(UserForm);
