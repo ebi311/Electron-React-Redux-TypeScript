@@ -1,6 +1,8 @@
 const path = require('path');
 
 module.exports = {
+    // node.js で動作することを指定する
+    target: 'node',
     // 起点となるファイル
     entry: './ts/index.tsx',
     // webpack watch したときに差分ビルドができる
