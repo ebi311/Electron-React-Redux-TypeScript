@@ -1,0 +1,50 @@
+{
+  "name": "electron-workshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "electron ./",
+    "watch": "webpack --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/clone": "^0.1.30",
+    "@types/fs-extra": "^5.0.4",
+    "@types/moment": "^2.13.0",
+    "@types/react": "^16.4.6",
+    "@types/react-datepicker": "^1.1.5",
+    "@types/react-dom": "^16.0.6",
+    "@types/react-redux": "^6.0.3",
+    "@types/redux": "^3.6.0",
+    "@types/uuid": "^3.4.3",
+    "css-loader": "^1.0.0",
+    "electron": "^2.0.4",
+    "eslint-config-google": "^0.9.1",
+    "style-loader": "^0.21.0",
+    "ts-loader": "^4.4.2",
+    "tslint": "^5.10.0",
+    "tslint-loader": "^3.6.0",
+    "typescript": "^2.9.2",
+    "typescript-styled-plugin": "^0.10.0",
+    "webpack": "^4.14.0",
+    "webpack-cli": "^3.0.8"
+  },
+  "dependencies": {
+    "clone": "^2.1.1",
+    "eslint": "^5.0.1",
+    "fs-extra": "^6.0.1",
+    "moment": "^2.22.2",
+    "polished": "^1.9.3",
+    "react": "^16.4.1",
+    "react-datepicker": "^1.5.0",
+    "react-dom": "^16.4.1",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "reset-css": "^4.0.1",
+    "styled-components": "^3.3.3",
+    "uuid": "^3.3.2"
+  }
+}
