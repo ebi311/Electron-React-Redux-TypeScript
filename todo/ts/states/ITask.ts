@@ -6,11 +6,9 @@ export interface ITask {
 }
 
 export interface ITaskList {
-    loading: boolean;
     tasks: ITask[];
 }
 
 export const initTaskList: ITaskList = {
-    loading: false,
     tasks: [],
 };

@@ -1,5 +1,8 @@
 import { combineReducers, createStore } from 'redux';
+
+import { loadingReducer } from './reducers/LoadingReducer';
 import { taskReducer } from './reducers/TaskReducer';
+import { ILoading } from './states/ILoading';
 import { ITaskList } from './states/ITask';
 
 /**
@@ -8,12 +11,14 @@ import { ITaskList } from './states/ITask';
  * プロパティには、管理する child_state を指定する
  */
 export interface IState { // --(a)
+    loading: ILoading;
     taskList: ITaskList;
     // state が増えたら足していく
 }
 
 // 複数の reducer を束ねる
 const combinedReducer = combineReducers<IState>({ // --(b)
+    loading: loadingReducer,
     taskList: taskReducer,
     // reducer が増えたら足していく
 });

@@ -16,7 +16,7 @@ injectGlobal`
         cursor: pointer;
         padding: .5em;
         transition-property: all;
-        transition-duration: .5s;
+        transition-duration: .2s;
         &:hover {
             box-shadow: 3px 3px 3px rgba(200,200,200,4);
             transform: translate(-2px, -2px);
