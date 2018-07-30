@@ -1,8 +1,7 @@
-import FS from 'fs-extra';
-import Redux, { Action } from 'redux';
-import { v4 as UUID } from 'uuid'; // -- (a)
+import Redux from 'redux';
+import { v4 as UUID } from 'uuid';
+
 import { ITask } from '../states/ITask';
-import store from '../Store';
 import AsyncAction from '../utils/AsyncAction';
 
 /**
