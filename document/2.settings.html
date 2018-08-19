@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2.settings.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+<link rel="stylesheet" href="file:///c%3A/Users/k.ebihara/Documents/2018-2Q%E5%8B%89%E5%BC%B7%E4%BC%9A/Electron%26React%26Redux%26TypeScript/document/style.css" type="text/css">
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file:///c%3A/Users/k.ebihara/Documents/2018-2Q%E5%8B%89%E5%BC%B7%E4%BC%9A/Electron%26React%26Redux%26TypeScript/document/style.css" type="text/css">
+</head>
+<body>
+<h1 id="electron-react-redux-typescript-%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%83%E3%83%97-2%E6%97%A5%E7%9B%AE">Electron &amp; React &amp; Redux &amp; TypeScript アプリ作成ワークショップ 2日目</h1>
+<p>前回は、npm プロジェクトと主要なライブラリのインストールを行いました。</p>
+<p>今回は、各ツールの定義ファイルの作成と、Electronアプリの最小限の構成で、一応動作するところまで作ります。</p>
+<h2 id="typescript-%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%A9%E3%83%BB%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E4%BD%9C%E6%88%90">TypeScript コンパイラ・オプションファイルの作成</h2>
+<p>TypeScriptのコンパイル・オプションは多数あるので、コンパイル・コマンドで引数を指定するよりも、ファイルで定義したほうが効率的です。</p>
+<p>ファイル名は、<code>tsconfig.json</code>とします。</p>
+<p>ファイルを一から作ることもできますが、下記コマンドで作成することもでき、オプションがコメントで全て記述されているので、オプションの on/off が楽です。</p>
+<blockquote>
+<p>通常JSONファイルはコメントの記述はできないのですが、このJSONファイルは特別なルールが適用されるようです。</p>
+</blockquote>
+<pre class="hljs"><code><div>$ ./node_modules/.bin/tsc --init
+</div></code></pre>
+<p>いくつかのコメントアウトを外し、下記になるようにしてください。</p>
+<p>また、&quot;include&quot;属性も追加します。これは、コンパイル対象のファイルを指定するものです。</p>
+<pre class="hljs"><code><div>{
+  <span class="hljs-attr">"compilerOptions"</span>: {
+    <span class="hljs-attr">"target"</span>: <span class="hljs-string">"es6"</span>,
+    <span class="hljs-attr">"module"</span>: <span class="hljs-string">"commonjs"</span>,
+    <span class="hljs-attr">"jsx"</span>: <span class="hljs-string">"react"</span>,
+    <span class="hljs-attr">"outDir"</span>: <span class="hljs-string">"./dist"</span>,
+    <span class="hljs-attr">"strict"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"esModuleInterop"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"sourceRoot"</span>: <span class="hljs-string">"./tsx"</span>,
+    <span class="hljs-attr">"inlineSourceMap"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"inlineSources"</span>: <span class="hljs-literal">true</span>
+  },
+  <span class="hljs-attr">"include"</span>: [
+    <span class="hljs-string">"./ts/**/*"</span>
+  ]
+}
+</div></code></pre>
+<blockquote>
+<p>パスのワイルドカードについて</p>
+<ul>
+<li><code>/**/</code> サブディレクトリを再帰的にマッチ</li>
+<li><code>*</code> 0個以上の文字列にマッチ</li>
+<li><code>?</code> 1個の文字列にマッチ</li>
+</ul>
+</blockquote>
+<h2 id="tslint-%E8%A8%AD%E5%AE%9A%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB-%E3%81%AE%E4%BD%9C%E6%88%90">tslint 設定ファイル の作成</h2>
+<p>tslint は設定したコーディング・ルールに従って、コンパイラが行う構文チェックより厳しいチェックを行います。</p>
+<p>例えば、</p>
+<ul>
+<li>文字列リテラルのシングルクォーテーションの仕様を強制する</li>
+<li>末尾のセミコロンを強制する</li>
+<li>インデントの数のチェック</li>
+<li>比較演算子に2個のイコールを禁止する(3個イコールを使用する)</li>
+<li>インターフェースやクラス名をキャメル型に強制する</li>
+</ul>
+<p>などがあります。</p>
+<blockquote>
+<p>ルール<br>
+公式: <a href="https://palantir.github.io/tslint/rules/">TSLint core rules</a><br>
+非公式(日本語): <a href="http://neos21.hatenablog.com/entry/2017/10/25/080000">TSLint v5.7.0 で指定できる全 rules をまとめた - Corredor</a></p>
+</blockquote>
+<p>下記コマンドで、推奨設定での tslint 設定ファイル<code>tslint.json</code>が作成されます。</p>
+<pre class="hljs"><code><div>$ ./node_modules/.bin/tslint.cmd --init
+</div></code></pre>
+<p>ここでは推奨設定に加えて、文字列リテラルには、シングルクォーテーションを使用するが、JSXの属性ではダブルクォーテーションとする、というルールを適用することとします。</p>
+<blockquote>
+<p>推奨設定の内容: <a href="https://github.com/palantir/tslint/blob/master/src/configs/recommended.ts">tslint/recommended.ts at master · palantir/tslint</a><br>
+推奨設定は、airbnb という企業が設計し、オープンソースとして公開しているルールとなっている
+<a href="http://mitsuruog.github.io/javascript-style-guide/">Javascript-style-guide</a><br>
+結構厳し目ですが、特に問題ない限りこれに従うと良いです。</p>
+</blockquote>
+<p>tslint.json</p>
+<pre class="hljs"><code><div>{
+    <span class="hljs-attr">"defaultSeverity"</span>: <span class="hljs-string">"error"</span>,
+    <span class="hljs-attr">"extends"</span>: [
+        <span class="hljs-string">"tslint:recommended"</span>
+    ],
+    <span class="hljs-attr">"jsRules"</span>: {},
+    <span class="hljs-attr">"rules"</span>: {
+        <span class="hljs-attr">"quotemark"</span>: [<span class="hljs-literal">true</span>, <span class="hljs-string">"single"</span>, <span class="hljs-string">"jsx-double"</span>]
+    },
+    <span class="hljs-attr">"rulesDirectory"</span>: []
+}
+</div></code></pre>
+<h2 id="webpackconfigjs-%E3%81%AE%E4%BD%9C%E6%88%90">webpack.config.js の作成</h2>
+<p>webpack の動作設定を行います。<code>webpack.config.js</code>の名前で空ファイルを作成し、下記内容を記述します。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+
+<span class="hljs-built_in">module</span>.exports = {
+<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+
+<span class="hljs-built_in">module</span>.exports = {
+    <span class="hljs-comment">// node.js で動作することを指定する</span>
+    target: <span class="hljs-string">'node'</span>,
+    <span class="hljs-comment">// 起点となるファイル</span>
+    entry: <span class="hljs-string">'./ts/index.tsx'</span>,
+    <span class="hljs-comment">// webpack watch したときに差分ビルドができる</span>
+    cache: <span class="hljs-literal">true</span>,
+    <span class="hljs-comment">// development は、 source map file を作成、再ビルド時間の短縮などの設定となる</span>
+    <span class="hljs-comment">// production は、コードの圧縮やモジュールの最適化が行われる設定となる</span>
+    mode: <span class="hljs-string">'development'</span>, <span class="hljs-comment">// "production" | "development" | "none"</span>
+    <span class="hljs-comment">// ソースマップのタイプ</span>
+    devtool: <span class="hljs-string">'source-map'</span>,
+    <span class="hljs-comment">// 出力先設定 __dirname は node でのカレントディレクトリのパスが格納される変数</span>
+    output: {
+        <span class="hljs-attr">path</span>: path.join(__dirname, <span class="hljs-string">'dist'</span>),
+        <span class="hljs-attr">filename</span>: <span class="hljs-string">'index.js'</span>
+    },
+    <span class="hljs-comment">// ファイルタイプ毎の処理を記述する</span>
+    <span class="hljs-built_in">module</span>: {
+        <span class="hljs-attr">rules</span>: [{
+            <span class="hljs-comment">// 正規表現で指定する</span>
+            <span class="hljs-comment">// 拡張子 .ts または .tsx の場合</span>
+            test: <span class="hljs-regexp">/\.tsx?$/</span>,
+            <span class="hljs-comment">// ローダーの指定</span>
+            <span class="hljs-comment">// TypeScript をコンパイルする</span>
+            use: <span class="hljs-string">'ts-loader'</span>
+        }, {
+            <span class="hljs-comment">// 拡張子 .ts または .tsx の場合</span>
+            test: <span class="hljs-regexp">/\.tsx?$/</span>,
+            <span class="hljs-comment">// 事前処理</span>
+            enforce: <span class="hljs-string">'pre'</span>,
+            <span class="hljs-comment">// TypeScript をコードチェックする</span>
+            loader: <span class="hljs-string">'tslint-loader'</span>,
+            <span class="hljs-comment">// 定義ファイル</span>
+            options: {
+                <span class="hljs-attr">configFile</span>: <span class="hljs-string">'./tslint.json'</span>,
+                <span class="hljs-comment">// airbnb というJavaScriptスタイルガイドに従うには下記が必要</span>
+                typeCheck: <span class="hljs-literal">true</span>,
+            },
+        }],
+    },
+   <span class="hljs-comment">// 処理対象のファイルを記載する</span>
+    resolve: {
+        <span class="hljs-attr">extensions</span>: [
+            <span class="hljs-string">'.ts'</span>,
+            <span class="hljs-string">'.tsx'</span>,
+            <span class="hljs-string">'.js'</span>, <span class="hljs-comment">// node_modulesのライブラリ読み込みに必要</span>
+        ]
+    },
+};
+</div></code></pre>
+<h2 id="html-%E3%81%AE%E4%BD%9C%E6%88%90">HTML の作成</h2>
+<p>UIとなるHTMLファイルを作成します。</p>
+<p>Reactでは、ほとんどの要素を動的に生成するので、HTMLファイルは非常に簡単なものになります。</p>
+<p>ファイル名を<code>index.html</code>とします。</p>
+<p>index.html</p>
+<pre class="hljs"><code><div><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Electronチュートリアル<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"contents"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"dist/index.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</div></code></pre>
+<h2 id="mainjs-%E3%81%AE%E4%BD%9C%E6%88%90">main.js の作成</h2>
+<p>Electronは、1つの main プロセスと 1つ以上の render　プロセスの2種類のプロセスで動作します。</p>
+<p>main プロセスは、Electron 自体と render プロセスの管理を行うものです。Electronアプリを起動したときには、まず main プロセスが動作し、その中で render プロセスを起動する仕組みとなっています。</p>
+<p>render プロセスは、ブラウザエンジンを持っていて、ブラウザアプリの動作を担当します。</p>
+<p>main.js にはメインプロセスのプログラムを書きます。</p>
+<blockquote>
+<p>これも TypeScript で書いて webpack で JavaScript に変換することもできますが、今回はコード量がそれほど多くはないので、JavaScript で書きます。</p>
+</blockquote>
+<p>main.js</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> {
+    app,
+    BrowserWindow
+} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'electron'</span>)
+
+<span class="hljs-comment">// レンダープロセスとなるブラウザ・ウィンドウのオブジェクト。</span>
+<span class="hljs-comment">// オブジェクトが破棄されると、プロセスも終了するので、グローバルオブジェクトとする。</span>
+<span class="hljs-keyword">let</span> win
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createWindow</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">// ブラウザウィンドウの作成</span>
+    win = <span class="hljs-keyword">new</span> BrowserWindow({
+        <span class="hljs-attr">width</span>: <span class="hljs-number">800</span>,
+        <span class="hljs-attr">height</span>: <span class="hljs-number">600</span>
+    })
+    <span class="hljs-comment">// index.html をロードする</span>
+    win.loadFile(<span class="hljs-string">'index.html'</span>)
+    <span class="hljs-comment">// 起動オプションに、 "--debug"があれば開発者ツールを起動する</span>
+    <span class="hljs-keyword">if</span> (process.argv.find(<span class="hljs-function">(<span class="hljs-params">arg</span>) =&gt;</span> arg === <span class="hljs-string">'--debug'</span>)) {
+        win.webContents.openDevTools()
+    }
+    <span class="hljs-comment">// ブラウザウィンドウを閉じたときのイベントハンドラ</span>
+    win.on(<span class="hljs-string">'closed'</span>, () =&gt; {
+        <span class="hljs-comment">// 閉じたウィンドウオブジェクトにはアクセスできない</span>
+        win = <span class="hljs-literal">null</span>
+    })
+}
+
+<span class="hljs-comment">// このメソッドは、Electronが初期化を終了し、</span>
+<span class="hljs-comment">// ブラウザウィンドウを作成する準備ができたら呼び出される。</span>
+<span class="hljs-comment">// 一部のAPIは、このイベントが発生した後にのみ使用できる。</span>
+app.on(<span class="hljs-string">'ready'</span>, createWindow)
+
+<span class="hljs-comment">// 全てのウィンドウオブジェクトが閉じたときのイベントハンドラ</span>
+app.on(<span class="hljs-string">'window-all-closed'</span>, () =&gt; {
+    <span class="hljs-comment">// macOSでは、アプリケーションとそのメニューバーがCmd + Qで</span>
+    <span class="hljs-comment">// 明示的に終了するまでアクティブになるのが一般的なため、</span>
+    <span class="hljs-comment">// メインプロセスは終了させない</span>
+    <span class="hljs-keyword">if</span> (process.platform !== <span class="hljs-string">'darwin'</span>) {
+        app.quit()
+    }
+});
+
+app.on(<span class="hljs-string">'activate'</span>, () =&gt; {
+    <span class="hljs-comment">// MacOSでは、ドックアイコンがクリックされ、</span>
+    <span class="hljs-comment">// 他のウィンドウが開いていないときに、アプリケーションでウィンドウを</span>
+    <span class="hljs-comment">// 再作成するのが一般的です。</span>
+    <span class="hljs-keyword">if</span> (win === <span class="hljs-literal">null</span>) {
+        createWindow()
+    }
+});
+</div></code></pre>
+<h2 id="%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%AB%E7%A2%BA%E8%AA%8D%E7%94%A8%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E3%81%AE%E8%A8%98%E8%BF%B0">コンパイル確認用スクリプトの記述</h2>
+<p>webpack でコンパイルができるか、確認します。</p>
+<p>そのために、TypeScript のファイル<code>index.tsx</code>を１つ作成します。</p>
+<pre class="hljs"><code><div>import React from 'react';
+import ReactDom from 'react-dom';
+
+const container = document.getElementById('contents');
+
+ReactDom.render(
+    &lt;p&gt;こんにちは、世界&lt;/p&gt;,
+    container,
+);
+</div></code></pre>
+<p>コード中にいきなり文字列でもなくHTMLタグがありますが、これは JSX 記法と言われるもので、DOM Elementオブジェクト（正確には、DOM Element をラッピングした React.HTMLElement オブジェクト ）を作成するものです。</p>
+<blockquote>
+<p>参考: <a href="https://www.to-r.net/media/react-tutorial04/">JSXの基本 – React入門 - to-R Media</a></p>
+</blockquote>
+<p>TypeScript でこれを利用するためには、<code>tsconfig.json</code>で<code>&quot;jsx&quot;: &quot;react&quot;</code>(Reactを利用する場合)とし、ソースのファイルの拡張子を<code>.tsx</code>とする必要があります。</p>
+<p>また、当然この記法は JavaScript としてブラウザが認識してくれないので、JavaScript に変換する必要がありますが、TypeScript コンパイラにはその機能もあるので、別途ツールを用意するなどの必要はありません。</p>
+<p>##　コンパイルの確認</p>
+<p>下記コマンドを実行して、コンパイルを実行します。</p>
+<pre class="hljs"><code><div>$ ./node_modules/.bin/webpack
+</div></code></pre>
+<p>dist ディレクトリが作成されその中に、<code>index.js</code>と<code>index.js.map</code>ができていれば成功です。</p>
+<p>Electron を起動して確認してみましょう。</p>
+<pre class="hljs"><code><div>$ ./node_modules/.bin/electron ./
+</div></code></pre>
+<p>”こんにちは、世界”が出てきたら成功です。</p>
+<p><img src="./electron_1.png" alt="electron_1"></p>
+<h2 id="npm-script-%E3%82%92%E5%88%A9%E7%94%A8%E3%81%99%E3%82%8B">npm script を利用する</h2>
+<p>いちいち<code>./node_modules/.bin</code>とか打つのが面倒なので、npm script に書きます。</p>
+<pre class="hljs"><code><div>{
+  <span class="hljs-attr">"scripts"</span>: {
+    <span class="hljs-attr">"build"</span>: <span class="hljs-string">"webpack"</span>,
+    <span class="hljs-attr">"start"</span>: <span class="hljs-string">"electron ./"</span>
+  },
+}
+</div></code></pre>
+<p>npm script は下記のように実行します。</p>
+<pre class="hljs"><code><div>$ npm run build
+</div></code></pre>
+<p>npm script は、<code>&quot;コマンド名&quot;: &quot;シェルコマンド&quot;</code>というように書きますが、<code>node_modules/.bin</code>にはパスが通った状態で実行するので、それを打たなくても良いです。</p>
+<p>また、下記コマンドは規定のコマンド名なので、<code>run</code> が必要ないです。</p>
+<ul>
+<li>start</li>
+<li>restart</li>
+<li>stop</li>
+<li>test</li>
+</ul>
+<pre class="hljs"><code><div>$ npm start
+</div></code></pre>
+<blockquote>
+<p>参考: <a href="https://qiita.com/liply/items/cccc6a7b703c1d3ab04f">npm scriptsを使おう - Qiita</a></p>
+</blockquote>
+<h2 id="%E6%AC%A1%E5%9B%9E">次回</h2>
+<p>コンパイルの環境が整いましたので、次回は、React-Redux を使ったフレームワークのコードを書いていきます。</p>
+
+</body>
+</html>

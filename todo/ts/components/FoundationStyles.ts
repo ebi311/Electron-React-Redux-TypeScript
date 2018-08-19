@@ -3,6 +3,7 @@ import '../../node_modules/reset-css/reset.css';
 
 // tslint:disable-next-line:no-unused-expression
 injectGlobal`
+    /* Global */
     html, body {
         font-family: "Meiryo UI";
         font-size: 12pt;
