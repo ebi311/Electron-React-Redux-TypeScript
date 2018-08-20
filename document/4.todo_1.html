@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>4.todo_1.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+<link rel="stylesheet" href="file:///c%3A/Users/ebi31/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/Electron-React-Redux-TypeScript/document/style.css" type="text/css">
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file:///c%3A/Users/ebi31/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/Electron-React-Redux-TypeScript/document/style.css" type="text/css">
+</head>
+<body>
+<h1 id="electron-react-redux-typescript-%E3%82%A2%E3%83%97%E3%83%AA%E4%BD%9C%E6%88%90%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%83%E3%83%97-4%E6%97%A5%E7%9B%AE">Electron &amp; React &amp; Redux &amp; TypeScript アプリ作成ワークショップ 4日目</h1>
+<p>前回はごく簡単な React-Redux を使ったアプリを作りました。</p>
+<p>今回から、数回に渡ってより実践的なアプリを作ってみましょう。</p>
+<p>最終的には、ファイルから非同期でデータの入出力を行うアプリにしますが、その前に</p>
+<p>長くなるので、Component は次回にして、その他のモジュールを作成していきます。</p>
+<h2 id="%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E4%BB%95%E6%A7%98">作成するアプリの仕様</h2>
+<p>ToDoを管理するアプリを作成します。画面仕様はこんな感じです。</p>
+<p><img src="./4.todo_1-1.png" alt="todo仕様"></p>
+<p>この画面のイベントとしては、下記があります。</p>
+<ul>
+<li>タスク一覧の表示</li>
+<li>タスクの追加</li>
+<li>タスクの完了・未完了の切り替え</li>
+<li>タスクの削除</li>
+</ul>
+<h2 id="%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%81%AE%E6%BA%96%E5%82%99">プロジェクトの準備</h2>
+<p>空のディレクトリを作成し、前回作成したチュートリアルのファイルをコピーします。</p>
+<p>dist と node_modules は対象外とします。</p>
+<p><img src="./4.todo_1-2.png" alt="filecopy"></p>
+<p>新しいディレクトリで VSCode を開いて、書きを行います。</p>
+<ul>
+<li>pachage.json を開いて、プロジェクトの名前を変更します。</li>
+<li>ターミナルで<code>npm install</code>を実行して、ライブラリをインストールします。</li>
+</ul>
+<p>ts ディレクトリ以下の下記ファイルを削除します。ディレクトリは残しておいてください。</p>
+<pre class="hljs"><code><div>ts
+│
+├─actions
+│      UserEvents.ts // 削除
+│
+├─components
+│      TextBox.tsx // 削除
+│      UserForm.tsx // 削除
+│
+├─reducers
+│      UserReducer.ts // 削除
+│
+└─states
+        IUser.ts // 削除
+</div></code></pre>
+<h2 id="%E5%90%84%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E9%96%A2%E4%BF%82">各ファイルの関係</h2>
+<p>各モジュールの関連は下記のようになります。</p>
+<p><img src="./4.todo_2.png" alt="4.todo_2.png"></p>
+<h2 id="%E5%AD%90-state-%E5%AE%9A%E7%BE%A9%E3%81%AE%E4%BD%9C%E6%88%90">子 State 定義の作成</h2>
+<p>Redux で管理するデータの定義を作成します。</p>
+<p>TODO ですので、idと、タスクの名前、期限、完了したかどうかのフラグを持ちましょう。</p>
+<p>タスクは複数管理されるので、その配列を保持するインターフェイスも定義しておきます。</p>
+<p>また、ステートの新規作成するときの関数と、その一覧のオブジェクトの初期値も定義しておきます。</p>
+<p>ITask.ts を作成します。</p>
+<p>ts/states/ITask.ts</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> {v4 <span class="hljs-keyword">as</span> UUID} <span class="hljs-keyword">from</span> <span class="hljs-string">'uuid'</span>;
+
+<span class="hljs-comment">/**
+ * タスク
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> ITask {
+    <span class="hljs-comment">/** 完了フラグ */</span>
+    complete: <span class="hljs-built_in">boolean</span>;
+    <span class="hljs-comment">/** 期限 */</span>
+    deadline: <span class="hljs-built_in">Date</span>;
+    <span class="hljs-comment">/** タスクを一意に判断するID　(UUID) */</span>
+    id: <span class="hljs-built_in">string</span>;
+    <span class="hljs-comment">/** タスクの名前 */</span>
+    todo: <span class="hljs-built_in">string</span>;
+}
+
+<span class="hljs-comment">/**
+ * タスクのリスト
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> ITaskList {
+    <span class="hljs-comment">/** タスクの一覧 */</span>
+    tasks: ITask[];
+}
+
+<span class="hljs-comment">/**
+ * タスクのリストの初期値
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> initTaskList: ITaskList = {
+    tasks: [],
+};
+
+<span class="hljs-comment">/**
+ * タスクを作成する
+ * @param taskName タスク名
+ * @param deadline 期限
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> createTask = <span class="hljs-function">(<span class="hljs-params">taskName: <span class="hljs-built_in">string</span>, deadline: <span class="hljs-built_in">Date</span></span>) =&gt;</span> {
+    <span class="hljs-keyword">return</span> {
+        complete: <span class="hljs-literal">false</span>,
+        deadline,
+        id: UUID(),
+        taskName,
+    };
+};
+</div></code></pre>
+<h2 id="state-%E3%81%AE%E4%BD%9C%E6%88%90">State の作成</h2>
+<p>Reducer を合成、ステートとなるインターフェースの定義、ステートの作成をします。</p>
+<p>ts/Store.ts</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> { AnyAction, combineReducers, createStore } <span class="hljs-keyword">from</span> <span class="hljs-string">'redux'</span>;
+<span class="hljs-keyword">import</span> { TaskReducer } <span class="hljs-keyword">from</span> <span class="hljs-string">'./reducers/TaskReducer'</span>;
+<span class="hljs-keyword">import</span> { ITaskList } <span class="hljs-keyword">from</span> <span class="hljs-string">'./states/ITask'</span>;
+
+<span class="hljs-comment">/**
+ * store のデータ型を定義する。（親state）
+ *
+ * プロパティには、管理する child_state を指定する
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> IState {
+    taskList: ITaskList;
+    <span class="hljs-comment">// state が増えたら足していく</span>
+}
+
+<span class="hljs-comment">// 複数の reducer を束ねる</span>
+<span class="hljs-keyword">const</span> reducers = combineReducers&lt;IState&gt;({
+    taskList: TaskReducer,
+    <span class="hljs-comment">// reducer が増えたら足していく</span>
+});
+
+<span class="hljs-comment">// グローバルオブジェクトとして、store を作成する。</span>
+<span class="hljs-keyword">const</span> store = createStore&lt;IState, AnyAction, {}, {}&gt;(reducers);
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> store;
+</div></code></pre>
+<p>上の方で、 Reducer がエラーになっていますが、新しい Reducer を作成したときに修正することにします。</p>
+<h2 id="action-%E3%81%AE%E4%BD%9C%E6%88%90">Action の作成</h2>
+<p>画面のイベントをアクションとして作成していきます。</p>
+<p>今回 Action Creator は、別ファイルに作成します。理由は後ほど非同期アクションについての説明の中で書きます。</p>
+<p>action/TodoActions.ts ファイルを作成し、画面のイベントごとにアクション・タイプとアクションを定義します。</p>
+<p>ts/action/TodoActions.ts</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> { Action } <span class="hljs-keyword">from</span> <span class="hljs-string">'redux'</span>;
+<span class="hljs-keyword">import</span> { v4 <span class="hljs-keyword">as</span> UUID } <span class="hljs-keyword">from</span> <span class="hljs-string">'uuid'</span>;
+<span class="hljs-keyword">import</span> { ITask } <span class="hljs-keyword">from</span> <span class="hljs-string">'../states/ITask'</span>;
+
+<span class="hljs-comment">/**
+ * タスクの一覧を表示するアクションタイプ
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> SHOW_TASKS = UUID();
+<span class="hljs-comment">/**
+ * タスクの一覧を表示するアクション
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> IShowTaskAction <span class="hljs-keyword">extends</span> Action {
+    tasks: ITask[];
+}
+<span class="hljs-comment">/**
+ * タスクを追加するアクションタイプ
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> ADD_TASK = UUID();
+<span class="hljs-comment">/**
+ * タスクを追加するアクション
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> IAddTaskAction <span class="hljs-keyword">extends</span> Action {
+    deadline: <span class="hljs-built_in">Date</span>;
+    taskName: <span class="hljs-built_in">string</span>;
+}
+<span class="hljs-comment">/**
+ * タスク完了のアクションタイプ
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> TOGGLE_COMPLETE_TASK = UUID();
+
+<span class="hljs-comment">/**
+ * タスク完了のアクション
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> IToggleCompleteAction <span class="hljs-keyword">extends</span> Action {
+    taskId: <span class="hljs-built_in">string</span>;
+}
+
+<span class="hljs-comment">/**
+ * タスク削除のアクションタイプ
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> DELETE_TASK = UUID();
+
+<span class="hljs-comment">/**
+ * タスク削除のアクション
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> IDeleteAction <span class="hljs-keyword">extends</span> Action {
+    taskId: <span class="hljs-built_in">string</span>;
+}
+</div></code></pre>
+<p>actions/TaskActionCreators.ts ファイルを作成し、アクション・クリエイターを作成します。</p>
+<p>ts/actions/TaskActionCreators.ts</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> { ActionCreator } <span class="hljs-keyword">from</span> <span class="hljs-string">'redux'</span>;
+
+<span class="hljs-keyword">import</span> { ITask } <span class="hljs-keyword">from</span> <span class="hljs-string">'../states/ITask'</span>;
+<span class="hljs-keyword">import</span> {
+    ADD_TASK,
+    DELETE_TASK,
+    IAddTaskAction,
+    IDeleteAction,
+    IShowTaskAction,
+    IToggleCompleteAction,
+    SHOW_TASKS,
+    TOGGLE_COMPLETE_TASK,
+} <span class="hljs-keyword">from</span> <span class="hljs-string">'./TaskActions'</span>;
+
+<span class="hljs-comment">/**
+ * タスクの表示アクションを作成する
+ * @param tasks 表示するタスクのリスト
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> creatShowTasksAction: ActionCreator&lt;IShowTaskAction&gt;
+    = <span class="hljs-function">(<span class="hljs-params">tasks: ITask[]</span>) =&gt;</span> {
+        <span class="hljs-keyword">return</span> {
+            tasks,
+            <span class="hljs-keyword">type</span>: SHOW_TASKS,
+        };
+    };
+<span class="hljs-comment">/**
+ * 新しいタスクを作成するアクションを作成する
+ * @param taskName 新しいタスクの名前
+ * @param deadline 新しいタクスの期限
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> createAddTaskAction: ActionCreator&lt;IAddTaskAction&gt;
+    = <span class="hljs-function">(<span class="hljs-params">taskName: <span class="hljs-built_in">string</span>, deadline</span>) =&gt;</span> {
+        <span class="hljs-keyword">return</span> {
+            deadline,
+            taskName,
+            <span class="hljs-keyword">type</span>: ADD_TASK,
+        };
+    };
+<span class="hljs-comment">/**
+ * タスクの完了状態を切り替える
+ * @param taskId 完了状態を切り替える対象のタスクのID
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> createToggleCompleteAction: ActionCreator&lt;IToggleCompleteAction&gt;
+    = <span class="hljs-function">(<span class="hljs-params">taskId: <span class="hljs-built_in">string</span></span>) =&gt;</span> {
+        <span class="hljs-keyword">return</span> {
+            taskId,
+            <span class="hljs-keyword">type</span>: TOGGLE_COMPLETE_TASK,
+        };
+    };
+<span class="hljs-comment">/**
+ * タスクを削除するアクションを作成する
+ * @param taskId 削除するタスクのID
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> createDeleteTaskAction: ActionCreator&lt;IDeleteAction&gt;
+    = <span class="hljs-function">(<span class="hljs-params">taskId: <span class="hljs-built_in">string</span></span>) =&gt;</span> {
+        <span class="hljs-keyword">return</span> {
+            taskId,
+            <span class="hljs-keyword">type</span>: DELETE_TASK,
+        };
+    };
+</div></code></pre>
+<h2 id="reducer-%E3%81%AE%E4%BD%9C%E6%88%90">Reducer の作成</h2>
+<p>作成したアクション毎の Reducer の処理を書いていきます。</p>
+<p>前回は、アクション・タイプ を switch で分岐して処理を書いていましたが、アクションが多くなると、Reducer の関数が長くなりすぎて、コードも見にくいですし、メンテナンスしづらくなります。</p>
+<p>そこで、事前にアクション・タイプとそれ毎の処理を登録し、アクション・タイプを渡すと、その処理を実行するクラスを作っておきましょう。</p>
+<p>このクラスは、新しいディレクトリ utils を作成して、その中に作成します。</p>
+<p>ts/utils/ActionToReducerMapper.ts</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> clone <span class="hljs-keyword">from</span> <span class="hljs-string">'clone'</span>;
+<span class="hljs-keyword">import</span> { Action } <span class="hljs-keyword">from</span> <span class="hljs-string">'redux'</span>;
+
+<span class="hljs-keyword">type</span> WorkOfAction&lt;S, A <span class="hljs-keyword">extends</span> Action = <span class="hljs-built_in">any</span>&gt; = <span class="hljs-function">(<span class="hljs-params">state: S, action: A</span>) =&gt;</span> <span class="hljs-built_in">void</span>;
+
+<span class="hljs-comment">/**
+ * 
+ */</span>
+<span class="hljs-keyword">class</span> ActionToReducerMapper&lt;S&gt; {
+    <span class="hljs-comment">/** アクション・タイプと処理の定義を保持する。 */</span>
+    <span class="hljs-keyword">private</span> works: {[actionKey: <span class="hljs-built_in">string</span>]: WorkOfAction&lt;S&gt;} = {};
+    <span class="hljs-comment">/** アクション・タイプと処理の定義を追加する。 */</span>
+    <span class="hljs-keyword">public</span> addWork = &lt;A <span class="hljs-keyword">extends</span> Action&gt;<span class="hljs-function">(<span class="hljs-params">actionType: <span class="hljs-built_in">string</span>, func: WorkOfAction&lt;S, A&gt;</span>) =&gt;</span> {
+        <span class="hljs-keyword">this</span>.works[actionType] = func;
+    }
+    <span class="hljs-comment">/** 処理を実行する。
+     * 該当するアクション・タイプがあった場合、state をクローンして指定の処理を行い、返す。
+     * 該当するアクション・タイプが無い場合、何も処理を行わず、state もクローンせずにそのまま返す。
+     */</span>
+    <span class="hljs-keyword">public</span> execute = <span class="hljs-function">(<span class="hljs-params">state: S, action: Action</span>) =&gt;</span> {
+        <span class="hljs-keyword">let</span> newState = state;
+        <span class="hljs-keyword">const</span> process = <span class="hljs-keyword">this</span>.works[action.type];
+        <span class="hljs-keyword">if</span> (!!process) {
+            newState = clone(state);
+            process(state, action);
+        }
+        <span class="hljs-keyword">return</span> newState;
+    }
+}
+
+<span class="hljs-keyword">const</span> createActionToReducerMapper = &lt;S&gt;<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> ActionToReducerMapper&lt;S&gt;();
+};
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> createActionToReducerMapper;
+</div></code></pre>
+<p>addWork で アクションタイプと、その処理を追加しておき、 execute のときに works に、引数で渡された action の type と一致するものがあれば、それの state をクローンして処理を実行します。
+そうでない場合は、state をクローンせずにそのまま返します。</p>
+<p>上で作ったクラスを利用して、Reducer を書きます。</p>
+<p>ts/reducers/taskReducer.ts</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> Clone <span class="hljs-keyword">from</span> <span class="hljs-string">'clone'</span>;
+<span class="hljs-keyword">import</span> Redux <span class="hljs-keyword">from</span> <span class="hljs-string">'redux'</span>;
+
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Action <span class="hljs-keyword">from</span> <span class="hljs-string">'../actions/TaskActions'</span>;
+<span class="hljs-keyword">import</span> { createTask, initTaskList, ITaskList } <span class="hljs-keyword">from</span> <span class="hljs-string">'../states/ITask'</span>;
+<span class="hljs-keyword">import</span> { IState } <span class="hljs-keyword">from</span> <span class="hljs-string">'../Store'</span>;
+<span class="hljs-keyword">import</span> createA2RMapper <span class="hljs-keyword">from</span> <span class="hljs-string">'../utils/ActionToReducerMapper'</span>;
+
+<span class="hljs-keyword">const</span> a2RMapper = createA2RMapper&lt;ITaskList&gt;();
+
+<span class="hljs-comment">/** タスク一覧を表示する */</span>
+a2RMapper.addWork&lt;Action.IShowTaskAction&gt;(
+    Action.SHOW_TASKS,
+    <span class="hljs-function">(<span class="hljs-params">state, action</span>) =&gt;</span> {
+        state.tasks = Clone(action.tasks);
+    },
+);
+
+<span class="hljs-comment">/** タスクを追加する */</span>
+a2RMapper.addWork&lt;Action.IAddTaskAction&gt;(
+    Action.ADD_TASK,
+    <span class="hljs-function">(<span class="hljs-params">state, action</span>) =&gt;</span> {
+        state.tasks.push(createTask(action.taskName, action.deadline));
+    },
+);
+
+<span class="hljs-comment">/** タスクを完了/未完了を切り替える */</span>
+a2RMapper.addWork&lt;Action.IToggleCompleteAction&gt;(
+    Action.TOGGLE_COMPLETE_TASK,
+    <span class="hljs-function">(<span class="hljs-params">state, action</span>) =&gt;</span> {
+        <span class="hljs-keyword">const</span> {tasks} = state;
+        <span class="hljs-comment">// 上記は下記と同じ意味</span>
+        <span class="hljs-comment">// const tasks = state.tasks</span>
+        <span class="hljs-keyword">const</span> target = tasks.find(<span class="hljs-function">(<span class="hljs-params">it</span>) =&gt;</span> it.id === action.taskId);
+        <span class="hljs-keyword">if</span> (!target) { <span class="hljs-keyword">return</span>; }
+        target.complete = !target.complete;
+    },
+);
+
+<span class="hljs-comment">/** タスクを削除する */</span>
+a2RMapper.addWork&lt;Action.IDeleteAction&gt;(
+    Action.DELETE_TASK,
+    <span class="hljs-function">(<span class="hljs-params">state, action</span>) =&gt;</span> {
+        <span class="hljs-keyword">const</span> {tasks} = state;
+        <span class="hljs-keyword">const</span> target = tasks.find(<span class="hljs-function">(<span class="hljs-params">it</span>) =&gt;</span> it.id === action.taskId);
+        <span class="hljs-keyword">if</span> (!target) { <span class="hljs-keyword">return</span>; }
+        <span class="hljs-comment">// 指定したID以外のオブジェクトを抽出し、それを新しいリストとする</span>
+        state.tasks = tasks.filter(<span class="hljs-function">(<span class="hljs-params">it</span>) =&gt;</span> it.id !== action.taskId);
+    },
+);
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> TaskReducer: Redux.Reducer&lt;ITaskList&gt; = <span class="hljs-function">(<span class="hljs-params">state = initTaskList, action</span>) =&gt;</span> {
+    <span class="hljs-keyword">return</span> a2RMapper.execute(state, action);
+};
+</div></code></pre>
+<p>Reducer を実装したので、 Store を修正します。</p>
+<p>ts/Store.ts</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> { combineReducers, createStore } <span class="hljs-keyword">from</span> <span class="hljs-string">'redux'</span>;
+
+<span class="hljs-keyword">import</span> { TaskReducer } <span class="hljs-keyword">from</span> <span class="hljs-string">'./reducers/TaskReducer'</span>;
+<span class="hljs-keyword">import</span> { ITaskList } <span class="hljs-keyword">from</span> <span class="hljs-string">'./states/ITask'</span>;
+
+<span class="hljs-comment">/**
+ * store のデータ型を定義する。（親state）
+ *
+ * プロパティには、管理する child_state を指定する
+ */</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> IState { <span class="hljs-comment">// --(a)</span>
+    taskList: ITaskList;
+    <span class="hljs-comment">// state が増えたら足していく</span>
+}
+
+<span class="hljs-comment">// 複数の reducer を束ねる</span>
+<span class="hljs-keyword">const</span> combinedReducer = combineReducers&lt;IState&gt;({ <span class="hljs-comment">// --(b)</span>
+    taskList: TaskReducer,
+    <span class="hljs-comment">// reducer が増えたら足していく</span>
+});
+
+<span class="hljs-comment">// グローバルオブジェクトとして、store を作成する。</span>
+<span class="hljs-keyword">const</span> store = createStore(combinedReducer); <span class="hljs-comment">// --(c)</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> store;
+</div></code></pre>
+<h2 id="%E6%AC%A1%E5%9B%9E">次回</h2>
+<p>次回は、 CSS in JavaScript の解説と、Component を作っていきます。</p>
+
+</body>
+</html>
