@@ -582,7 +582,7 @@ blockquote {
  * タスクの表示アクションを作成する
  * @param tasks 表示するタスクのリスト
  */</span>
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> creatShowTasksAction: ActionCreator&lt;IShowTaskAction&gt;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> createShowTasksAction: ActionCreator&lt;IShowTaskAction&gt;
     = <span class="hljs-function">(<span class="hljs-params">tasks: ITask[]</span>) =&gt;</span> {
         <span class="hljs-keyword">return</span> {
             tasks,
@@ -637,7 +637,7 @@ blockquote {
 <span class="hljs-keyword">type</span> WorkOfAction&lt;S, A <span class="hljs-keyword">extends</span> Action = <span class="hljs-built_in">any</span>&gt; = <span class="hljs-function">(<span class="hljs-params">state: S, action: A</span>) =&gt;</span> <span class="hljs-built_in">void</span>;
 
 <span class="hljs-comment">/**
- * 
+ *
  */</span>
 <span class="hljs-keyword">class</span> ActionToReducerMapper&lt;S&gt; {
     <span class="hljs-comment">/** アクション・タイプと処理の定義を保持する。 */</span>
